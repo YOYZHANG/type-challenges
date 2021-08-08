@@ -1,0 +1,9 @@
+1. POP
+
+```ts
+type Pop<T extends any[]> = T extends [...arg: infer P, last: any] ? P : never;
+```
+https://github.com/type-challenges/type-challenges/blob/master/questions/16-medium-pop/README.md
+
+
+
