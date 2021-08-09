@@ -20,3 +20,7 @@ type LookUp<U, T extends string> =
 
 ```
 
+4. trimLeft
+```ts
+type TrimLeft<S extends string> = S extends `${' ' | '\n' | '\t'}${infer R}`? TrimLeft<R> : S;
+```
