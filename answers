@@ -5,5 +5,11 @@ type Pop<T extends any[]> = T extends [...arg: infer P, last: any] ? P : never;
 ```
 https://github.com/type-challenges/type-challenges/blob/master/questions/16-medium-pop/README.md
 
+2. Promise.all
 
+```ts
+
+declare function PromiseAll<T extends any[]>(values: readonly[...T]):
+  Promise<{[key in keyof T]: T[key] extends Promise<infer I> ? I : T[key]}>
+```
 
