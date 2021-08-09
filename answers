@@ -40,3 +40,8 @@ type Trim<S extends string> = S extends `${' ' | '\n' | '\t'}${infer P}`
 ```ts
 type Capitalize<S extends string> = S extends `${infer P}${infer rest}` ? `${Uppercase<P>}${rest}` : S;
 ```
+
+7. replace
+```ts
+type Replace<S extends string, From extends string, To extends string> = From extends '' ? S : S extends `${infer A}${From}${infer B}` ? `${A}${To}${B}` : S
+```
