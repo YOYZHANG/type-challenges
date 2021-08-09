@@ -35,3 +35,8 @@ type Trim<S extends string> = S extends `${' ' | '\n' | '\t'}${infer P}`
 
 
 ```
+6. capitalize
+
+```ts
+type Capitalize<S extends string> = S extends `${infer P}${infer rest}` ? `${Uppercase<P>}${rest}` : S;
+```
